@@ -2,8 +2,8 @@
 
 if __name__ == "__main__":
     from add_0 import add 
+    """Print the sum of 1 and 2"""
 
     a = 1
     b = 2
-    c = add(a, b)
-    print("{} + {} = {}".format(a, b, c))
+    print("{} + {} = {}".format(a, b, add(a, b)))
