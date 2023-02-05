@@ -52,4 +52,3 @@ class Square:
     def __ge__(self, other):
         """Define the >= compmarison to a Square."""
         return self.area() >= other.area()
-
