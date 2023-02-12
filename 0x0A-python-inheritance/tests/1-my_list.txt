@@ -33,6 +33,14 @@ Or a single argument, which must be an iterable object.
     TypeError: 'NoneType' object is not iterable
 
 
+A ``TypeError`` will be raised for any more than one instantiation arguments.
+
+::
+
+    >>> my_list = MyList([1, 2], [3, 4])
+    Traceback (most recent call last):
+    TypeError: list() takes at most 1 argument (2 given)
+
 Usage
 =====
 
