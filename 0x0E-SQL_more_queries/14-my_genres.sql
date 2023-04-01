@@ -1,11 +1,11 @@
--- Lists all genres from the database hbtn_0d_tvshows along with the number of
--- shows linked to each.
--- Does not display genres without linked shows.
--- Records are ordered by descending number of shows linked.
-SELECT g.`name` AS `genre`,
-       COUNT(*) AS `number_of_shows`
+-- Lists all genres of the show Dexter in the database hbtn_0d_tvshows.
+-- Records are ordered by ascending genre name.
+SELECT g.`name`
   FROM `tv_genres` AS g
-       INNER JOIN `tv_show_genres` AS t
-       ON g.`id` = t.`genre_id`
- GROUP BY g.`name`
- ORDER BY `number_of_shows` DESC;
+       INNER JOIN `tv_show_genres` AS s
+       ON g.`id` = s.`genre_id`
+
+       INNER JOIN `tv_shows` AS t
+       ON t.`id` = s.`show_id`
+       WHERE t.`title` = "Dexter"
+ ORDER BY g.`name`;
